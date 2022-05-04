@@ -1,0 +1,26 @@
+1 - Create Account
+    Expected Result: Account should be created
+
+2 - Update Account
+    Expected Result: Account should be updated
+
+3 - Create Account With Same Name
+    Expected Result: Account should not be created
+
+4 - Create Transaction
+    Expected Result: Transaction should be created
+
+5 - Transaction Mandatory Fields
+    Expected Result: Should not be possible to create a transaction without any mandatory field
+
+6 - Future Transaction
+    Expected Result: Should not be possible to create a transaction with transaction date after today
+
+7 - Remove Transaction
+    Expect Result: Transaction should be removed
+
+8 - Remove Account With Transaction
+    Expected Result: Should not be possible to remove an account which has one or more transactions
+
+9 - Check Balance
+    Expected Result: Balance should be checked
