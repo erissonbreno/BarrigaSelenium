@@ -1,0 +1,1 @@
+Project using Java + Selenium to perform functional tests.

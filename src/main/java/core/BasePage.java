@@ -3,54 +3,75 @@ package core;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import static core.DriverFactory.getDriver;
 
 public class BasePage {
 
-    public void escrever(By by, String texto) {
-        getDriver().findElement(by).sendKeys(texto);
+    public void write(By by, String text) {
+        getDriver().findElement(by).sendKeys(text);
     }
 
-    public void escrever(String id_campo, String texto) {
-        escrever(By.id(id_campo), texto);
+    public void write(String id, String text) {
+        write(By.id(id), text);
     }
 
-    public void clicar(String id_campo) {
-        getDriver().findElement(By.id(id_campo)).click();
+    public void click(By by) {
+        getDriver().findElement(by).click();
     }
 
-    public void selecionarCombo(String id_campo, String valor) {
-        Select combo = new Select(getDriver().findElement(By.id(id_campo)));
-        combo.selectByVisibleText(valor);
+    public void click(String id) {
+        click(By.id(id));
     }
 
-    public String obterTextoCampo(String id_campo) {
-        return getDriver().findElement(By.id(id_campo)).getText();
+    public void selectCombo(String id, String value) {
+        Select combo = new Select(getDriver().findElement(By.id(id)));
+        combo.selectByVisibleText(value);
     }
 
-    public void trocarJanela(String id_janela) {
-        getDriver().switchTo().window(id_janela);
+    public String getTextField(By by) {
+        return getDriver().findElement(by).getText();
+    }
+
+    public String getTextField(String id) {
+        return getTextField(By.id(id));
+    }
+
+    public void switchWindow(String id) {
+        getDriver().switchTo().window(id);
     }
 
     public void frame(String frame) {
         getDriver().switchTo().frame(frame);
     }
 
-    public void sairFrame() {
+    public void exitFrame() {
         getDriver().switchTo().defaultContent();
     }
 
-    public String alertaObterTextoEAceita() {
+    public String alertGetTextAndAccept() {
         Alert alert = getDriver().switchTo().alert();
-        String texto = alert.getText();
+        String text = alert.getText();
         alert.accept();
-        return texto;
+        return text;
     }
 
-    public Object executarJS(String cmd, Object... param) {
+    public Object executeJS(String cmd, Object... param) {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         return js.executeScript(cmd, param);
+    }
+
+    public void clearTextField(By by) {
+        getDriver().findElement(by).clear();
+    }
+
+    public String getSuccessMessage() {
+        return getTextField(By.xpath("//div[@class='alert alert-success']"));
+    }
+
+    public String getFailMessage() {
+        return getTextField(By.xpath("//div[@class='alert alert-danger']"));
     }
 }
