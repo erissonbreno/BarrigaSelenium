@@ -48,4 +48,9 @@ public class BaseTest {
             killDriver();
         }
     }
+
+    @AfterClass
+    public static void endsAll() {
+        killDriver();
+    }
 }

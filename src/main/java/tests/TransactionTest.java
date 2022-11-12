@@ -3,17 +3,9 @@ package tests;
 import core.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
-import org.junit.runners.Parameterized.Parameters;
 import pages.MenuPage;
 import pages.MonthlySummaryPage;
 import pages.TransactionPage;
-
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 
 public class TransactionTest extends BaseTest {
     private MenuPage menu = new MenuPage();

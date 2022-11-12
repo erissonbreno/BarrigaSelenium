@@ -2,11 +2,6 @@ package pages;
 
 import core.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-
-import static core.DriverFactory.getDriver;
 
 public class AccountPage extends BasePage {
 

@@ -2,9 +2,7 @@ package core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -47,7 +45,17 @@ public class DriverFactory {
         }
 
         if (EXECUTION_TYPE == GRID) {
-            // Code to GRID execution
+            DesiredCapabilities cap = new DesiredCapabilities();
+            switch (BROWSER) {
+                case CHROME:
+                    cap.setCapability("browser", "Chrome");
+            }
+            try {
+                driver = new RemoteWebDriver(new URL("http://26.102.99.27:4444/wd/hub"), cap);
+            } catch (MalformedURLException e) {
+                System.out.println("Falha na conexão com o GRID");
+                e.printStackTrace();
+            }
         }
 
         if (EXECUTION_TYPE == CLOUD) {

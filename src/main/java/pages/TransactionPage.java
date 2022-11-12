@@ -4,9 +4,6 @@ import core.BasePage;
 import org.openqa.selenium.By;
 import utils.DateUtils;
 
-import java.util.Calendar;
-import java.util.Date;
-
 public class TransactionPage extends BasePage {
 
     public void setTransactionType(String type) {
@@ -46,7 +43,7 @@ public class TransactionPage extends BasePage {
     }
 
     public void setValue(String value) {
-        write("valor",value);
+        write("valor", value);
     }
 
     public void setAccount(String account) {

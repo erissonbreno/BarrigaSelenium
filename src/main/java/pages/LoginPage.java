@@ -1,11 +1,7 @@
 package pages;
 
 import core.BasePage;
-import core.DriverFactory;
-import org.junit.Before;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 import static core.DriverFactory.getDriver;
 

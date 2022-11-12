@@ -23,10 +23,10 @@
                 <version>2.12.4</version>
                 <configuration>
                     <includes>
-                        <include>suites/*.java</include>
+                        <include>tests/*.java</include>
                     </includes>
                     <parallel>all</parallel>
-                    <threadCount>2</threadCount>
+                    <threadCount>3</threadCount>
                 </configuration>
             </plugin>
 

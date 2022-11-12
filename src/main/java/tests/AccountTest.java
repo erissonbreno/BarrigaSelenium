@@ -12,7 +12,7 @@ public class AccountTest extends BaseTest {
     private MenuPage menu = new MenuPage();
 
     @Test
-    public void testCreateAccount(){
+    public void testCreateAccount() {
         menu.accessInsertAccountPage();
         account.setName("Conta Teste");
         account.save();
