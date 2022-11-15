@@ -7,7 +7,7 @@ public class Properties {
 
     public static Browsers BROWSER = CHROME;
 
-    public static executionType EXECUTION_TYPE = executionType.GRID;
+    public static executionType EXECUTION_TYPE = executionType.CLOUD;
 
     public enum Browsers {
         CHROME,
